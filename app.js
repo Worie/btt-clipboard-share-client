@@ -17,7 +17,7 @@ const {
 
 const btt = new BTT.Btt({
   domain: BTT_DOMAIN,
-  port: BTT_PORT,
+  port: Number(BTT_PORT),
   protocol: BTT_PROTOCOL,
   sharedKey: BTT_SHARED_KEY,
 }); 
@@ -37,7 +37,7 @@ socket.on('clipboard', async (data) => {
 
 // add an action to save the shared state
 (async () => {
-  btt.addTriggerAction('lctrl+lcmd+c', (ev) => {
+  btt.addTriggerAction('ctrl+cmd+c', (ev) => {
     ev.comment = "Sets up shared clipboard value to currently selected text";
     ev.actions.push(
       btt.saveSelectedText(),
@@ -60,7 +60,7 @@ socket.on('clipboard', async (data) => {
 
 // add an action to retrieve the shared state
 (async () => {
-  btt.addTriggerAction('lctrl+lcmd+v', (ev) => {
+  btt.addTriggerAction('ctrl+cmd+v', (ev) => {
     ev.comment = "Pastes value from shared clipboard";
     ev.actions.push(
       btt.executeScript(`

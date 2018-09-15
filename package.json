@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "btt": "^2.1.0",
+    "btt": "^3.0.0",
     "dotenv": "^6.0.0",
     "socket.io": "^2.1.1"
   }
